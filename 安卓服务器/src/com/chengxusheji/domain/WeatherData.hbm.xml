@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="WeatherData" table="WeatherData">
+
+          <!-- 主键记录id -->
+          <id name="weatherDataId" column="weatherDataId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 天气数据名称 -->
+          <property
+            name="weatherDataName"
+            column="weatherDataName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单图片属性: 天气数据图像 -->
+          <property
+            name="weatherImage"
+            column="weatherImage"
+            type="string"
+            length="50"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Weather" table="Weather">
+
+          <!-- 主键天气id -->
+          <id name="weatherId" column="weatherId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 地区 -->
+          <many-to-one name="areaObj"
+            column="areaObj"
+            class="Area"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单日期型属性: 天气日期 -->
+          <property
+            name="weatherDate"
+            column="weatherDate"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 多对一属性: 天气 -->
+          <many-to-one name="weatherDataObj"
+            column="weatherDataObj"
+            class="WeatherData"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单图片属性: 天气图像 -->
+          <property
+            name="weatherImage"
+            column="weatherImage"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 温度 -->
+          <property
+            name="temperature"
+            column="temperature"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 空气质量 -->
+          <property
+            name="airQuality"
+            column="airQuality"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
